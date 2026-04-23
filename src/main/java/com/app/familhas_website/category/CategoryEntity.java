@@ -1,21 +1,34 @@
 package com.app.familhas_website.category;
 
-import com.app.familhas_website.travelPackage.TravelPackageEntity;
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.loader.ast.internal.CacheEntityLoaderHelper;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.app.familhas_website.enums.EntityStatus;
+import com.app.familhas_website.travelpackage.TravelPackageEntity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "categories")
-@Builder
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CategoryEntity {
 
     @Id
@@ -27,7 +40,7 @@ public class CategoryEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private CacheEntityLoaderHelper.EntityStatus status;
+    private EntityStatus status;
 
     @Column(length = 500)
     private String imageUrl;
@@ -38,6 +51,4 @@ public class CategoryEntity {
     @OneToMany(mappedBy = "category")
     @Builder.Default
     private List<TravelPackageEntity> travelPackages = new ArrayList<>();
-
-
 }

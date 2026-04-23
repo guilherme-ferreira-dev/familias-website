@@ -1,19 +1,31 @@
 package com.app.familhas_website.city;
 
-import com.app.familhas_website.enums.CityType;
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.loader.ast.internal.CacheEntityLoaderHelper;
-
 import java.util.UUID;
+
+import com.app.familhas_website.enums.CityType;
+import com.app.familhas_website.enums.EntityStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "cities")
-@Builder
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CityEntity {
 
     @Id
@@ -32,8 +44,5 @@ public class CityEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    CacheEntityLoaderHelper.EntityStatus status;
-
-
-
+    private EntityStatus status;
 }
