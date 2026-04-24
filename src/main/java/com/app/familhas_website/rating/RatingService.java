@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.app.familhas_website.client.ClientEntity;
 import com.app.familhas_website.rating.dto.RatingRequest;
 import com.app.familhas_website.rating.dto.RatingResponse;
-import com.app.familhas_website.travelpackage.TravelPackageEntity;
+import com.app.familhas_website.travelPackage.TravelPackageEntity;
 
 import jakarta.persistence.EntityManager;
 

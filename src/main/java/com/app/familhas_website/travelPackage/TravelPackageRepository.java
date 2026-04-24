@@ -1,4 +1,4 @@
-package com.app.familhas_website.travelpackage;
+package com.app.familhas_website.travelPackage;
 
 import java.util.UUID;
 

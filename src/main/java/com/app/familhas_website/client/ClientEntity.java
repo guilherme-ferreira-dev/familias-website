@@ -1,10 +1,10 @@
 package com.app.familhas_website.client;
 
+import com.app.familhas_website.enums.EntityStatus;
 import com.app.familhas_website.rating.RatingEntity;
 import com.app.familhas_website.travelPackage.TravelPackageEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.loader.ast.internal.CacheEntityLoaderHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class ClientEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private CacheEntityLoaderHelper.EntityStatus status;
+    private EntityStatus status;
 
     @ManyToMany
     @JoinTable(

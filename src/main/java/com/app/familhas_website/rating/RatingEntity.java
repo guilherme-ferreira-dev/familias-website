@@ -3,7 +3,7 @@ package com.app.familhas_website.rating;
 import java.util.UUID;
 
 import com.app.familhas_website.client.ClientEntity;
-import com.app.familhas_website.travelpackage.TravelPackageEntity;
+import com.app.familhas_website.travelPackage.TravelPackageEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
